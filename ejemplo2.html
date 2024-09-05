@@ -8,6 +8,7 @@
 <body>
     <h1>Formulario de Datos</h1>
     <input type="number" id="idtxt" placeholder="Id" min="1"><br>
+    <input type="text" id="direcciontxt" placeholder="Dirección"><br>
 
     <button id="boton-guardar">Guardar</button>
     <button id="boton-listar">Listar</button>
@@ -18,6 +19,7 @@
     <script>
         document.getElementById('boton-guardar').onclick = function() {
             localStorage.setItem("Identificador", document.getElementById("idtxt").value);
+            localStorage.setItem("Dirección", document.getElementById("direcciontxt").value);
 
             alert("Datos guardados!");
         };
@@ -25,6 +27,7 @@
         document.getElementById('boton-listar').onclick = function() {
             let resultado = `
                 Id: ${localStorage.getItem("Identificador")}
+                Dirección: ${localStorage.getItem("Dirección")}
 
             `;
             document.getElementById("resultado").textContent = resultado;
