@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Local Storage</title>
+</head>
+<body>
+    <h1>Formulario de Datos</h1>
+    <input type="number" id="idtxt" placeholder="Id" min="1"><br>
+    <input type="text" id="nombretxt" placeholder="Nombre"><br>
+    <input type="text" id="apellidotxt" placeholder="Apellido"><br>
+    <input type="email" id="correotxt" placeholder="Correo"><br>
+    <input type="text" id="direcciontxt" placeholder="Dirección"><br>
+    <input type="tel" id="telefonotxt" placeholder="Teléfono"><br>
+    <input type="date" id="fechanactxt" placeholder="Fecha de Nacimiento"><br>
+    <input type="number" id="edadtxt" placeholder="Edad"><br>
+    <button id="boton-guardar">Guardar</button>
+    <button id="boton-listar">Listar</button>
+
+    <h2>Datos Almacenados:</h2>
+    <pre id="resultado"></pre>
+
+    <script>
+        document.getElementById('boton-guardar').onclick = function() {
+            localStorage.setItem("Identificador", document.getElementById("idtxt").value);
+            localStorage.setItem("Nombre", document.getElementById("nombretxt").value);
+            localStorage.setItem("Apellido", document.getElementById("apellidotxt").value);
+            localStorage.setItem("Correo", document.getElementById("correotxt").value);
+            localStorage.setItem("Dirección", document.getElementById("direcciontxt").value);
+            localStorage.setItem("Teléfono", document.getElementById("telefonotxt").value);
+            localStorage.setItem("Fechadenacimiento", document.getElementById("fechanactxt").value);
+            localStorage.setItem("Edad", document.getElementById("edadtxt").value);
+            alert("Datos guardados!");
+        };
+
+        document.getElementById('boton-listar').onclick = function() {
+            let resultado = `
+                Id: ${localStorage.getItem("Identificador")}
+                Nombre: ${localStorage.getItem("Nombre")}
+                Apellido: ${localStorage.getItem("Apellido")}
+                Correo: ${localStorage.getItem("Correo")}
+                Dirección: ${localStorage.getItem("Dirección")}
+                Teléfono: ${localStorage.getItem("Teléfono")}
+                Fecha de Nacimiento: ${localStorage.getItem("Fechadenacimiento")}
+                Edad: ${localStorage.getItem("Edad")}
+            `;
+            document.getElementById("resultado").textContent = resultado;
+        };
+    </script>
+</body>
+</html>
