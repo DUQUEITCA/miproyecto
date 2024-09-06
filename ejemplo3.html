@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo3 - calculadora básica</title>
+</head>
+<body>
+    <script>
+        // función sumar
+        function sumar(n1,n2){
+            let resultado_sumar = 0;
+            resultado_sumar = n1 + n2;
+            return resultado_sumar
+        }
+        // función restar
+        function restar(n1,n2){
+            let resultado_restar = 0;
+            resultado_restar = n1 - n2;
+            return resultado_restar
+        }
+        // función multiplicar
+        function multiplicar(n1,n2){
+            let resultado_multiplicar = 0;
+            resultado_multiplicar = n1 * n2;
+            return resultado_multiplicar
+        }
+        // función dividir
+        function dividir(n1,n2){
+            let resultado_dividir = 0;
+            if (n2 == 0){
+                resultado_dividir = 'ERROR DIVISIÓN POR CERO';
+            }else{
+                resultado_dividir = n1/n2;
+            }
+            return resultado_dividir
+        } 
+        // función potencia
+        function potencia(n1,n2){
+            let resultado_potencia = 0;
+            resultado_potencia = Math.pow(n1,n2);
+            return resultado_potencia;
+        }
+        // función área
+        function area(n1,n2){
+            let resultado_area = n1 * n2;
+            return resultado_area
+        }
+
+        // principal
+        var n1, n2, resultado, op, continuar;
+        n1 = 0;
+        n2 = 0;
+        resultado = 0;
+        continuar = 'S';
+        while (continuar == 'S'){
+            n1 = parseFloat(prompt('Ingrese 1er. Valor:'));
+            n2 = parseFloat(prompt('Ingrese 2do. Valor:'));
+            op = prompt('Ingrese operación:\n + \n - \n * \n / \n ^ \n área \n ');
+            switch (op){
+                case '+': 
+                    resultado = sumar(n1,n2);
+                    break;
+                case '-': 
+                    resultado = restar(n1,n2);
+                    break;
+                case '*': 
+                    resultado = multiplicar(n1,n2);
+                    break;
+                case '/': 
+                    resultado = dividir(n1,n2);
+                    break;
+                case '^': 
+                    resultado = potencia(n1,n2);
+                    break;
+                case 'área': 
+                case 'area': 
+                case 'a':
+                    resultado = area(n1,n2);
+                    break;
+                default:
+                    resultado = 'ERROR OPERACIÓN NO RECONOCIDA';
+                    break;
+            }
+            alert(n1 + op + n2 + ' = ' + resultado);
+            continuar = prompt('¿Desea efectuar otra operación (S/N)?');
+        }
+        document.write('FIN...');
+    </script>
+    
+</body>
+</html>
