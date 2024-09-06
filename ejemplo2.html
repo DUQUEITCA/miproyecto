@@ -23,6 +23,7 @@
             localStorage.setItem("Identificador", document.getElementById("idtxt").value);
             localStorage.setItem("Fechadenacimiento", document.getElementById("fechanactxt").value); 
             localStorage.setItem("Dirección", document.getElementById("direcciontxt").value);
+            localStorage.setItem("Telefono", document.getElementById("telefonotxt").value);
             localStorage.setItem("Edad", document.getElementById("edadtxt").value);
             alert("Datos guardados!");
         };
@@ -32,6 +33,7 @@
                 Id: ${localStorage.getItem("Identificador")}
                 Fecha de Nacimiento: ${localStorage.getItem("Fechadenacimiento")} 
                 Dirección: ${localStorage.getItem("Dirección")}
+                Teléfono: ${localStorage.getItem("Telefono")}
                 Edad: ${localStorage.getItem("Edad")}
             `;
             document.getElementById("resultado").textContent = resultado;
