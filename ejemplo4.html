@@ -8,25 +8,37 @@
 <body>
     <script>
         // función sumar
-
-      
-      
-      
-      
+        function sumar(n1,n2){
+            let resultado_sumar = 0;
+            resultado_sumar = n1 + n2;
+            return resultado_sumar
+        }
       // función restar
-
-      
-      
-      
-      
+        function restar(n1,n2){
+            let resultado_restar = 0;
+            resultado_restar = n1 - n2;
+            return resultado_restar
+        }
       // función multiplicar
-
+      function multiplicar(n1,n2){
+            let resultado_multiplicar = 0;
+            resultado_multiplicar = n1 * n2;
+            return resultado_multiplicar
+        }
       
       
       
       
       // función dividir
-
+      function dividir(n1,n2){
+            let resultado_dividir = 0;
+            if (n2 == 0){
+                resultado_dividir = 'ERROR DIVISIÓN POR CERO';
+            }else{
+                resultado_dividir = n1/n2;
+            }
+            return resultado_dividir
+        } 
       
       
       
@@ -37,7 +49,11 @@
       
       // función potencia
 
-      
+      function potencia(n1,n2){
+            let resultado_potencia = 0;
+            resultado_potencia = Math.pow(n1,n2);
+            return resultado_potencia;
+        }
       
       
       
