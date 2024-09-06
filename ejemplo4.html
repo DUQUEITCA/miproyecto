@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo4 - calculadora básica</title>
+</head>
+<body>
+    <script>
+        // función sumar
+
+      
+      
+      
+      
+      // función restar
+
+      
+      
+      
+      
+      // función multiplicar
+
+      
+      
+      
+      
+      // función dividir
+
+      
+      
+      
+      
+      
+      
+      
+      
+      // función potencia
+
+      
+      
+      
+      
+      // función área
+
+
+
+
+      
+        // principal
+        var n1, n2, resultado, op, continuar;
+        n1 = 0;
+        n2 = 0;
+        resultado = 0;
+        continuar = 'S';
+        while (continuar == 'S'){
+            n1 = parseFloat(prompt('Ingrese 1er. Valor:'));
+            n2 = parseFloat(prompt('Ingrese 2do. Valor:'));
+            op = prompt('Ingrese operación:\n + \n - \n * \n / \n ^ \n área \n ');
+            switch (op){
+                case '+': 
+                    resultado = sumar(n1,n2);
+                    break;
+                case '-': 
+                    resultado = restar(n1,n2);
+                    break;
+                case '*': 
+                    resultado = multiplicar(n1,n2);
+                    break;
+                case '/': 
+                    resultado = dividir(n1,n2);
+                    break;
+                case '^': 
+                    resultado = potencia(n1,n2);
+                    break;
+                case 'área': 
+                case 'area': 
+                case 'a':
+                    resultado = area(n1,n2);
+                    break;
+                default:
+                    resultado = 'ERROR OPERACIÓN NO RECONOCIDA';
+                    break;
+            }
+            alert(n1 + op + n2 + ' = ' + resultado);
+            continuar = prompt('¿Desea efectuar otra operación (S/N)?');
+        }
+        document.write('FIN...');
+    </script>
+    
+</body>
+</html>
