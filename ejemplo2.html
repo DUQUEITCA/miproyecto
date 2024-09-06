@@ -8,6 +8,7 @@
 <body>
     <h1>Formulario de Datos</h1>
     <input type="number" id="idtxt" placeholder="Id" min="1"><br>
+    <input type="text" id="nombretxt" placeholder="Nombre"><br>
     <input type="date" id="fechanactxt" placeholder="Fecha de Nacimiento"><br> 
     <input type="tel" id="telefonotxt" placeholder="Ingrese Teléfono"><br>    
     <input type="email" id="correotxt" placeholder="Correo"><br>
@@ -23,6 +24,7 @@
     <script>
         document.getElementById('boton-guardar').onclick = function() {
             localStorage.setItem("Identificador", document.getElementById("idtxt").value);
+            localStorage.setItem("Nombre", document.getElementById("nombretxt").value);
             localStorage.setItem("Correo", document.getElementById("correotxt").value);
             localStorage.setItem("Fechadenacimiento", document.getElementById("fechanactxt").value); 
             localStorage.setItem("Dirección", document.getElementById("direcciontxt").value);
@@ -33,6 +35,8 @@
 
         document.getElementById('boton-listar').onclick = function() {
             let resultado = `
+            Id: ${localStorage.getItem("Identificador")}
+            Nombre: ${localStorage.getItem("Nombre")}
                 Id: ${localStorage.getItem("Identificador")}
                 Fecha de Nacimiento: ${localStorage.getItem("Fechadenacimiento")} 
                 Dirección: ${localStorage.getItem("Dirección")}
