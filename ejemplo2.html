@@ -20,16 +20,14 @@
     <script>
         document.getElementById('boton-guardar').onclick = function() {
             localStorage.setItem("Identificador", document.getElementById("idtxt").value);
-            localStorage.setItem("Fechadenacimiento", document.getElementById("fechanactxt").value); 
-            localStorage.setItem("Edad", document.getElementById("edadtxt").value);
+
             alert("Datos guardados!");
         };
 
         document.getElementById('boton-listar').onclick = function() {
             let resultado = `
                 Id: ${localStorage.getItem("Identificador")}
-                Fecha de Nacimiento: ${localStorage.getItem("Fechadenacimiento")} 
-                Edad: ${localStorage.getItem("Edad")}
+
             `;
             document.getElementById("resultado").textContent = resultado;
         };
